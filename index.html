@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Latihan JavaScript - Registrasi, Kode Pos, Dropdown Dinamis</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="tab-shell" aria-label="Navigasi latihan">
+      <div class="tab-list" role="tablist" aria-label="Latihan JavaScript">
+        <button
+          type="button"
+          class="tab-button active"
+          id="tab-registrasi"
+          role="tab"
+          aria-controls="panel-registrasi"
+          aria-selected="true"
+          tabindex="0"
+          data-tab-target="#panel-registrasi"
+        >
+          1. Form Registrasi
+        </button>
+        <button
+          type="button"
+          class="tab-button"
+          id="tab-kodepos"
+          role="tab"
+          aria-controls="panel-kodepos"
+          aria-selected="false"
+          tabindex="-1"
+          data-tab-target="#panel-kodepos"
+        >
+          2. Kode Pos
+        </button>
+        <button
+          type="button"
+          class="tab-button"
+          id="tab-dropdown"
+          role="tab"
+          aria-controls="panel-dropdown"
+          aria-selected="false"
+          tabindex="-1"
+          data-tab-target="#panel-dropdown"
+        >
+          3. Dropdown Dinamis
+        </button>
+      </div>
+    </nav>
+
+    <div class="tab-panels">
+      <section class="card tab-panel active" id="panel-registrasi" role="tabpanel" aria-labelledby="tab-registrasi">
+        <h2>Form Registrasi Mahasiswa</h2> <br>
+
+        <form id="registration-form" novalidate>
+          <div class="field">
+            <label for="student-name">Nama Mahasiswa</label>
+            <div class="autocomplete">
+              <input id="student-name" name="studentName" type="text" placeholder="Masukkan nama lengkap" autocomplete="off" required>
+              <ul id="name-suggestions" class="suggestions hidden" role="listbox" aria-label="Saran nama mahasiswa"></ul>
+            </div>
+            <small id="student-name-error" class="error-text"></small>
+          </div>
+
+          <div class="field">
+            <label for="student-nrp">NRP (10 digit)</label>
+            <input id="student-nrp" name="studentNrp" type="text" inputmode="numeric" maxlength="10" placeholder="50********" required>
+            <small id="student-nrp-error" class="error-text"></small>
+          </div>
+
+          <div class="field">
+            <label for="course-name">Mata Kuliah</label>
+            <select id="course-name" name="courseName" required>
+              <option value="">Pilih Mata Kuliah</option>
+            </select>
+            <small id="course-name-error" class="error-text"></small>
+          </div>
+
+          <div class="field">
+            <label for="lecturer-name">Dosen</label>
+            <select id="lecturer-name" name="lecturerName" required>
+              <option value="">Pilih Nama Dosen</option>
+            </select>
+            <small id="lecturer-name-error" class="error-text"></small>
+          </div>
+
+          <button type="submit" class="btn">Daftarkan</button>
+        </form>
+
+        <div id="registration-result" class="result hidden" aria-live="polite"></div>
+      </section>
+
+      <section class="card tab-panel" id="panel-kodepos" role="tabpanel" aria-labelledby="tab-kodepos" hidden>
+        <h2>Pencarian Kode Pos Indonesia</h2> <br>
+        
+
+        <div class="grid-3">
+          <div class="field">
+            <label for="province-select">Provinsi</label>
+            <select id="province-select">
+              <option value="">Memuat provinsi...</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="regency-select">Kabupaten/Kota</label>
+            <select id="regency-select" disabled>
+              <option value="">Pilih provinsi terlebih dahulu</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="district-select">Kecamatan</label>
+            <select id="district-select" disabled>
+              <option value="">Pilih kabupaten/kota terlebih dahulu</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="postal-result" class="result" aria-live="polite">
+          Pilih area dulu untuk melihat hasil kode pos.
+        </div>
+      </section>
+
+      <section class="card tab-panel" id="panel-dropdown" role="tabpanel" aria-labelledby="tab-dropdown" hidden>
+        <h2>List Dropdown Dinamis</h2> <br>
+        
+        <div class="grid-2">
+          <div class="field">
+            <label for="product-type-select">Pilih Brand Kamera</label>
+            <select id="product-type-select">
+              <option value="">Pilih Brand Kamera</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="brand-select">Pilih Model Kamera</label>
+            <select id="brand-select" disabled>
+              <option value="">Pilih Model Kamera</option>
+            </select>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
