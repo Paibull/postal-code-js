@@ -644,7 +644,7 @@ async function postalInitializeFinder() {
   postalResetRegencySelect();
   postalResetDistrictSelect();
   postalResetVillageSelect();
-  postalRenderMessage("Pilih area dulu untuk melihat hasil kode pos.", "default");
+  postalRenderMessage("Silakan pilih daerah terlebih dahulu.", "default");
 
   domReferences.provinceSelect.addEventListener("change", () => {
     postalHandleProvinceChange().catch(error => {
@@ -703,19 +703,19 @@ function postalScheduleWarmup() {
 
 function postalResetRegencySelect() {
   domReferences.regencySelect.disabled = true;
-  populateSelectOptionsByItems(domReferences.regencySelect, [], "Pilih provinsi terlebih dahulu");
+  populateSelectOptionsByItems(domReferences.regencySelect, [], "Pilih provinsi");
   applicationState.postalSelection.regency = "";
 }
 
 function postalResetDistrictSelect() {
   domReferences.districtSelect.disabled = true;
-  populateSelectOptionsByItems(domReferences.districtSelect, [], "Pilih kabupaten/kota terlebih dahulu");
+  populateSelectOptionsByItems(domReferences.districtSelect, [], "Pilih kabupaten/kota");
   applicationState.postalSelection.district = "";
 }
 
 function postalResetVillageSelect() {
   domReferences.villageSelect.disabled = true;
-  populateSelectOptionsByItems(domReferences.villageSelect, [], "Pilih kecamatan terlebih dahulu");
+  populateSelectOptionsByItems(domReferences.villageSelect, [], "Pilih kecamatan");
   applicationState.postalSelection.village = "";
   applicationState.postalPreview.districtCode = "";
   applicationState.postalPreview.expanded = false;
@@ -730,7 +730,7 @@ async function postalHandleProvinceChange() {
   postalResetVillageSelect();
 
   if (!selectedProvinceCode) {
-    postalRenderMessage("Pilih area dulu untuk melihat hasil kode pos.", "default");
+    postalRenderMessage("Silakan pilih daerah terlebih dahulu.", "default");
     return;
   }
 
