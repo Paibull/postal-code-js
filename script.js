@@ -208,15 +208,15 @@ function activateTab(targetSelector, maintainFocus) {
 
   if (targetId === "panel-kodepos") {
     postalEnsureFeatureReady(false).catch(error => {
-      console.error("Gagal memuat database wilayah lokal:", error);
-      postalRenderMessage("Gagal memuat database wilayah lokal.", "error");
+      console.error("Gagal memuat database wilayah", error);
+      postalRenderMessage("Gagal memuat database wilayah", "error");
     });
   }
 }
 
 function populateAcademicOptions() {
   populateSelectOptions(domReferences.courseInput, fallbackCourseNames, "Pilih Mata Kuliah");
-  populateSelectOptions(domReferences.lecturerInput, fallbackLecturerNames, "Pilih Nama Dosen");
+  populateSelectOptions(domReferences.lecturerInput, fallbackLecturerNames, "Pilih Dosen");
   domReferences.courseInput.disabled = false;
   domReferences.lecturerInput.disabled = false;
 }
