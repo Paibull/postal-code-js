@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Latihan JavaScript - Registrasi, Kode Pos, Dropdown Dinamis</title>
-  <link rel="stylesheet" href="main.css">
+  <title>Latihan JavaScript</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="page">
@@ -95,7 +95,7 @@
         <h2>Pencarian Kode Pos Indonesia</h2> <br>
         
 
-        <div class="grid-3">
+        <div class="grid-4">
           <div class="field">
             <label for="province-select">Provinsi</label>
             <select id="province-select">
@@ -116,6 +116,13 @@
               <option value="">Pilih kabupaten/kota terlebih dahulu</option>
             </select>
           </div>
+
+          <div class="field">
+            <label for="village-select">Desa/Kelurahan (Opsional)</label>
+            <select id="village-select" disabled>
+              <option value="">Pilih kecamatan terlebih dahulu</option>
+            </select>
+          </div>
         </div>
 
         <div id="postal-result" class="result" aria-live="polite">
@@ -128,15 +135,15 @@
         
         <div class="grid-2">
           <div class="field">
-            <label for="product-type-select">Pilih Brand Kamera</label>
-            <select id="product-type-select">
+            <label for="camera-brand-select">Pilih Brand Kamera</label>
+            <select id="camera-brand-select">
               <option value="">Pilih Brand Kamera</option>
             </select>
           </div>
 
           <div class="field">
-            <label for="brand-select">Pilih Model Kamera</label>
-            <select id="brand-select" disabled>
+            <label for="camera-model-select">Pilih Model Kamera</label>
+            <select id="camera-model-select" disabled>
               <option value="">Pilih Model Kamera</option>
             </select>
           </div>
@@ -145,6 +152,6 @@
     </div>
   </main>
 
-  <script src="main.js" defer></script>
+  <script src="script.js?v=20260422-6" defer></script>
 </body>
 </html>
